@@ -20,7 +20,7 @@ func parseDate(layout, date string) time.Time {
 func parseShows(rows [][]string) []show {
 	shows := []show{}
 	for i, row := range rows {
-		if i < 1 {
+		if i < 1 || row[1] == "" {
 			continue
 		}
 		name := row[0]
